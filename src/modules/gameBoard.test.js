@@ -43,3 +43,22 @@ test("receiveAttack adds to usedAttacks array and ship will be removed from ship
     });
   });
 });
+
+test("receiveAttack miss adds miss to usedAttack array", () => {
+  let gameBoard1 = GameBoard(ships);
+  gameBoard1.receiveAttack(20);
+  expect(gameBoard1.usedAttacks).toStrictEqual([{ index: 20, status: "miss" }]);
+  gameBoard1.receiveAttack(34);
+  expect(gameBoard1.usedAttacks).toStrictEqual([
+    { index: 20, status: "miss" },
+    { index: 34, status: "miss" },
+  ]);
+});
+
+test("check loss", () => {
+  let gameBoard1 = GameBoard([Ship([0])]);
+
+  gameBoard1.receiveAttack(0);
+
+  expect(gameBoard1.checkLoss()).toBe("all of your ships have sunk");
+});

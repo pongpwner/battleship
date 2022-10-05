@@ -9,7 +9,13 @@ let GameBoard = function (shipsArr) {
   let ships = shipsArr;
   //let shipsSunk = 0;
   //let missedAttacks = [];
+
   let usedAttacks = [];
+  function checkLoss() {
+    if (this.ships.length === 0) {
+      return "all of your ships have sunk";
+    }
+  }
   function placeShip() {}
   function receiveAttack(loc) {
     //check if location has been used before
@@ -20,12 +26,13 @@ let GameBoard = function (shipsArr) {
     //there is only one ship
     ships.forEach((ship) => {
       //maybe change find to filter
+      // if (ship === undefined) {
+      //   return this.checkLoss();
+      // }
       ship.location.forEach((loca) => {
-        console.log(loca);
         if (loca === loc) {
-          console.log("hiiiiiiiit");
           ship.hit();
-          usedAttacks.push({ index: loc, status: "hit" });
+          this.usedAttacks.push({ index: loc, status: "hit" });
         }
 
         if (ship.sunk === true) {
@@ -33,12 +40,13 @@ let GameBoard = function (shipsArr) {
           this.ships = this.ships.filter(
             (ship1) => ship1.length !== ship.length
           );
+          this.checkLoss();
         }
       });
     });
     if (usedAttacks.length === prevLength) {
       //missedAttacks.push(loc);
-      usedAttacks.push({ index: loc, status: "missed" });
+      this.usedAttacks.push({ index: loc, status: "miss" });
     }
   }
   return {
@@ -46,6 +54,7 @@ let GameBoard = function (shipsArr) {
     ships,
     usedAttacks,
     placeShip,
+    checkLoss,
     receiveAttack,
   };
 };
