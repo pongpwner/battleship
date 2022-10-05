@@ -1,7 +1,7 @@
-function Ship(size) {
-  let length = size;
-  if (size < 1) length = 1;
-  if (size > 5) length = 5;
+function Ship(location) {
+  let length = location.length;
+  // if (location.length < 1) length = 1;
+  // if (location.length > 5) length = 5;
 
   let timesHit = 0;
   let sunk = false;
@@ -20,6 +20,7 @@ function Ship(size) {
     return true;
   }
   return {
+    location,
     length,
     timesHit,
     sunk,
