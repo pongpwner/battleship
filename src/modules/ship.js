@@ -1,4 +1,5 @@
 function Ship(location) {
+  //lacation is an array of numbers between 0 and 99
   let length = location.length;
   // if (location.length < 1) length = 1;
   // if (location.length > 5) length = 5;

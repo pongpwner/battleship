@@ -1,45 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1664945701881" clover="3.2.0">
-  <project timestamp="1664945701881" name="All files">
-    <metrics statements="33" coveredstatements="33" conditionals="10" coveredconditionals="10" methods="11" coveredmethods="10" elements="54" coveredelements="53" complexity="0" loc="33" ncloc="33" packages="1" files="2" classes="2"/>
+<coverage generated="1665112296661" clover="3.2.0">
+  <project timestamp="1665112296661" name="All files">
+    <metrics statements="48" coveredstatements="48" conditionals="10" coveredconditionals="10" methods="15" coveredmethods="14" elements="73" coveredelements="72" complexity="0" loc="48" ncloc="48" packages="1" files="4" classes="4"/>
     <file name="gameBoard.js" path="D:\Libraries\Documents\CodeProjects\battleship\src\modules\gameBoard.js">
       <metrics statements="22" coveredstatements="22" conditionals="8" coveredconditionals="8" methods="8" coveredmethods="7"/>
-      <line num="4" count="1" type="stmt"/>
-      <line num="5" count="4" type="stmt"/>
-      <line num="6" count="4" type="stmt"/>
-      <line num="7" count="400" type="stmt"/>
-      <line num="9" count="4" type="stmt"/>
-      <line num="13" count="4" type="stmt"/>
+      <line num="4" count="2" type="stmt"/>
+      <line num="5" count="15" type="stmt"/>
+      <line num="6" count="15" type="stmt"/>
+      <line num="7" count="1500" type="stmt"/>
+      <line num="9" count="15" type="stmt"/>
+      <line num="13" count="15" type="stmt"/>
       <line num="15" count="11" type="cond" truecount="2" falsecount="0"/>
       <line num="16" count="2" type="stmt"/>
-      <line num="22" count="6" type="stmt"/>
-      <line num="25" count="6" type="stmt"/>
-      <line num="27" count="6" type="stmt"/>
-      <line num="32" count="11" type="stmt"/>
-      <line num="33" count="26" type="cond" truecount="2" falsecount="0"/>
-      <line num="34" count="4" type="stmt"/>
-      <line num="35" count="4" type="stmt"/>
-      <line num="38" count="26" type="cond" truecount="2" falsecount="0"/>
+      <line num="22" count="10" type="stmt"/>
+      <line num="25" count="10" type="stmt"/>
+      <line num="27" count="10" type="stmt"/>
+      <line num="32" count="19" type="stmt"/>
+      <line num="33" count="46" type="cond" truecount="2" falsecount="0"/>
+      <line num="34" count="5" type="stmt"/>
+      <line num="35" count="5" type="stmt"/>
+      <line num="38" count="46" type="cond" truecount="2" falsecount="0"/>
       <line num="40" count="10" type="stmt"/>
       <line num="41" count="12" type="stmt"/>
       <line num="43" count="10" type="stmt"/>
-      <line num="47" count="6" type="cond" truecount="2" falsecount="0"/>
-      <line num="49" count="2" type="stmt"/>
-      <line num="52" count="4" type="stmt"/>
+      <line num="47" count="10" type="cond" truecount="2" falsecount="0"/>
+      <line num="49" count="5" type="stmt"/>
+      <line num="52" count="15" type="stmt"/>
+    </file>
+    <file name="player.js" path="D:\Libraries\Documents\CodeProjects\battleship\src\modules\player.js">
+      <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="5" count="11" type="stmt"/>
+      <line num="8" count="11" type="stmt"/>
+      <line num="9" count="11" type="stmt"/>
+      <line num="10" count="1100" type="stmt"/>
+      <line num="12" count="11" type="stmt"/>
+      <line num="16" count="2" type="stmt"/>
+      <line num="17" count="2" type="stmt"/>
+      <line num="24" count="2" type="stmt"/>
+      <line num="28" count="11" type="stmt"/>
     </file>
     <file name="ship.js" path="D:\Libraries\Documents\CodeProjects\battleship\src\modules\ship.js">
       <metrics statements="11" coveredstatements="11" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
-      <line num="2" count="5" type="stmt"/>
-      <line num="6" count="5" type="stmt"/>
-      <line num="7" count="5" type="stmt"/>
-      <line num="9" count="6" type="stmt"/>
-      <line num="11" count="6" type="cond" truecount="2" falsecount="0"/>
-      <line num="12" count="3" type="stmt"/>
+      <line num="3" count="17" type="stmt"/>
+      <line num="7" count="17" type="stmt"/>
+      <line num="8" count="17" type="stmt"/>
+      <line num="10" count="7" type="stmt"/>
+      <line num="12" count="7" type="cond" truecount="2" falsecount="0"/>
       <line num="13" count="3" type="stmt"/>
-      <line num="16" count="3" type="stmt"/>
-      <line num="19" count="3" type="stmt"/>
+      <line num="14" count="3" type="stmt"/>
+      <line num="17" count="4" type="stmt"/>
       <line num="20" count="3" type="stmt"/>
-      <line num="22" count="5" type="stmt"/>
+      <line num="21" count="3" type="stmt"/>
+      <line num="23" count="17" type="stmt"/>
+    </file>
+    <file name="utils.js" path="D:\Libraries\Documents\CodeProjects\battleship\src\modules\utils.js">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="2" count="11" type="stmt"/>
+      <line num="3" count="1089" type="stmt"/>
+      <line num="4" count="1089" type="stmt"/>
+      <line num="5" count="1089" type="stmt"/>
+      <line num="6" count="1089" type="stmt"/>
     </file>
   </project>
 </coverage>
