@@ -1,13 +1,14 @@
 import Ship from "./ship";
 import GameBoard from "./gameBoard";
 import Player from "./player";
+import Dom from "./dom";
 const GameController = (function () {
   // create gameboards and players
   let gameOver = false;
   function start() {
     const shipsArr1 = [
       Ship([62, 72]),
-      Ship([53, 54, 54]),
+      Ship([52, 53, 54]),
       Ship([35, 45, 55]),
       Ship([1, 2, 3, 4]),
       Ship([91, 92, 93, 94, 95]),

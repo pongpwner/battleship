@@ -1,3 +1,21 @@
 * {
   box-sizing: border-box;
 }
+.board {
+  display: grid;
+  grid-template-rows: repeat(10, 15px);
+
+  grid-template-columns: repeat(10, 15px);
+
+  margin-bottom: 20px;
+}
+.board-tile {
+  border: 1px solid black;
+}
+
+.hit {
+  background-color: red;
+}
+.miss {
+  background-color: aqua;
+}
