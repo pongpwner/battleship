@@ -13,8 +13,10 @@ let Player = function (type, ships) {
 
   function cpuAttack(player) {
     //random number 0-99 no repeat as value in gameBoard.receiveAtack()
-    console.log(this.cpuAttacks.shift());
-    player.gameBoard.receiveAttack(this.cpuAttacks.shift());
+    //console.log(this.cpuAttacks.shift());
+    let temp = this.cpuAttacks.shift();
+    player.gameBoard.receiveAttack(temp);
+    return temp;
 
     //dom methods
   }

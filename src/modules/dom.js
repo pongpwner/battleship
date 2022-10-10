@@ -11,22 +11,48 @@ const Dom = (function (player1, player2) {
     for (let i = 0; i < 100; i++) {
       let temp = document.createElement("button");
       temp.classList.add("board-tile", "neutral");
-      temp.addEventListener("click", (e) => {
-        player.attack(i, opponent);
-        //find tile and call set tile
-        let tile = opponent.gameBoard.usedAttacks.find(
-          (attack) => attack.index === i
-        );
-
-        e.target.classList.add(tile.status);
-      });
       temp.dataset.tileNumber = i;
+      temp.addEventListener(
+        "click",
+        (e) => {
+          player.attack(i, opponent);
+          //find tile and set tile to hit or miss
+          let tile = opponent.gameBoard.usedAttacks.find(
+            (attack) => attack.index === i
+          );
+
+          e.target.classList.add(tile.status);
+          //todo oponents turn
+          //call oponent attack
+          let playerTileIndex = opponent.cpuAttack(player);
+          //get tile from player used tiles
+          console.log(playerTileIndex);
+          let playerTile = player.gameBoard.usedAttacks.find(
+            (attack) => attack.index === playerTileIndex
+          );
+          console.log(playerTile);
+          //find player tile with queryselector
+          let playerTiles = document.querySelectorAll(".player-tile");
+          //console.log(playerTiles);
+          playerTiles.forEach((tile) => {
+            console.log(playerTile.index);
+            console.log(tile.dataset.tileNumber);
+            if (tile.dataset.tileNumber == playerTile.index) {
+              console.log("hit");
+              tile.classList.add(playerTile.status);
+            }
+          });
+          //add game end check
+        },
+        { once: true }
+      );
+
       opponentBoard.appendChild(temp);
     }
     for (let i = 0; i < 100; i++) {
       let temp = document.createElement("button");
       //add receive attack method
-      temp.classList.add("board-tile", "neutral");
+      temp.classList.add("board-tile", "neutral", "player-tile");
       temp.dataset.tileNumber = i;
       playerBoard.appendChild(temp);
     }
