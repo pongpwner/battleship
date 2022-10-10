@@ -11,6 +11,47 @@ const Dom = (function (player1, player2) {
     let playerBoard = document.createElement("div");
     playerBoard.classList.add("board");
 
+    //
+    let opponentBoardContainer = document.createElement("div");
+    opponentBoardContainer.classList.add("board-container");
+    let playerBoardContainer = document.createElement("div");
+    playerBoardContainer.classList.add("board-container");
+
+    // coordinate labels, 123..ABC
+    let xAxis = document.createElement("div");
+    xAxis.classList.add("x-axis");
+    let yAxis = document.createElement("div");
+    yAxis.classList.add("y-axis");
+
+    // coordinate labels, 123..ABC
+    let xAxis2 = document.createElement("div");
+    xAxis2.classList.add("x-axis");
+    let yAxis2 = document.createElement("div");
+    yAxis2.classList.add("y-axis");
+
+    //append labels to x and y axis
+    for (let i = 0; i < 10; i++) {
+      let label = document.createElement("div");
+      label.textContent = i;
+      xAxis.appendChild(label);
+    }
+    for (let i = 0; i < 10; i++) {
+      let label = document.createElement("div");
+      label.textContent = String.fromCharCode(i + 65);
+      yAxis.appendChild(label);
+    }
+    //append labels to x and y axis
+    for (let i = 0; i < 10; i++) {
+      let label = document.createElement("div");
+      label.textContent = i;
+      xAxis2.appendChild(label);
+    }
+    for (let i = 0; i < 10; i++) {
+      let label = document.createElement("div");
+      label.textContent = String.fromCharCode(i + 65);
+      yAxis2.appendChild(label);
+    }
+
     //add tiles to player and opponent board
     for (let i = 0; i < 100; i++) {
       let temp = document.createElement("button");
@@ -98,10 +139,17 @@ const Dom = (function (player1, player2) {
       });
       playerBoard.appendChild(temp);
     }
+    opponentBoardContainer.appendChild(xAxis);
+    opponentBoardContainer.appendChild(yAxis);
+    opponentBoardContainer.appendChild(opponentBoard);
+    playerBoardContainer.appendChild(xAxis2);
+    playerBoardContainer.appendChild(yAxis2);
+    playerBoardContainer.appendChild(playerBoard);
+
     pageContent.appendChild(opponentHeader);
-    pageContent.appendChild(opponentBoard);
+    pageContent.appendChild(opponentBoardContainer);
     pageContent.appendChild(playerHeader);
-    pageContent.appendChild(playerBoard);
+    pageContent.appendChild(playerBoardContainer);
   }
 
   return {

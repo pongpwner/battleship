@@ -7,6 +7,11 @@
   justify-content: center;
   align-items: center;
 }
+.board-container {
+  display: grid;
+  grid-template-rows: 25px 250px;
+  grid-template-columns: 25px 250px;
+}
 .board {
   display: grid;
   grid-template-rows: repeat(10, 25px);
@@ -14,6 +19,8 @@
   grid-template-columns: repeat(10, 25px);
 
   margin-bottom: 20px;
+  grid-row: 2;
+  grid-column: 2;
 }
 .board-tile {
   border: 1px solid black;
@@ -41,4 +48,23 @@
   z-index: 1;
   background-color: silver;
   border: 3px solid black;
+}
+.x-axis div,
+.y-axis div {
+  border: 1px solid black;
+  text-align: center;
+  height: 25px;
+  width: 25px;
+}
+.x-axis {
+  display: grid;
+  grid-template-columns: repeat(10, 25px);
+  grid-row: 1;
+  grid-column: 2;
+}
+.y-axis {
+  grid-template-rows: repeat(10, 25px);
+  width: 25px;
+  grid-row: 2;
+  grid-column: 1;
 }
