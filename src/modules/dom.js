@@ -2,6 +2,10 @@ import GameBoard from "./gameBoard";
 const Dom = (function (player1, player2) {
   function generateDom(player, opponent) {
     let pageContent = document.querySelector("#content");
+    let opponentHeader = document.createElement("h1");
+    opponentHeader.textContent = "opponent";
+    let playerHeader = document.createElement("h1");
+    playerHeader.textContent = "player";
     let opponentBoard = document.createElement("div");
     opponentBoard.classList.add("board");
     let playerBoard = document.createElement("div");
@@ -42,9 +46,35 @@ const Dom = (function (player1, player2) {
 
           //add game end check
           if (opponent.gameBoard.loss) {
-            alert("opponent loses");
-          } else if (player.gameBoard.loss) {
-            alert("player loses");
+            //alert("opponent loses");
+            let gameOverScreen = document.createElement("div");
+            gameOverScreen.classList.add("game-over-screen");
+            let gameOverText = document.createElement("h2");
+            gameOverText.textContent = "You Win";
+            let resetButton = document.createElement("button");
+            resetButton.textContent = "Play Again";
+
+            resetButton.addEventListener("click", () => {
+              location.reload();
+            });
+            gameOverScreen.appendChild(gameOverText);
+            gameOverScreen.appendChild(resetButton);
+            pageContent.appendChild(gameOverScreen);
+          }
+          if (player.gameBoard.loss) {
+            //alert("player loses");
+            let gameOverScreen = document.createElement("div");
+            gameOverScreen.classList.add("game-over-screen");
+            let gameOverText = document.createElement("h2");
+            gameOverText.textContent = "You Win";
+            let resetButton = document.createElement("button");
+            resetButton.textContent = "Play Again";
+            resetButton.addEventListener("click", () => {
+              location.reload();
+            });
+            gameOverScreen.appendChild(gameOverText);
+            gameOverScreen.appendChild(resetButton);
+            pageContent.appendChild(gameOverScreen);
           }
         },
         { once: true }
@@ -68,8 +98,9 @@ const Dom = (function (player1, player2) {
       });
       playerBoard.appendChild(temp);
     }
-
+    pageContent.appendChild(opponentHeader);
     pageContent.appendChild(opponentBoard);
+    pageContent.appendChild(playerHeader);
     pageContent.appendChild(playerBoard);
   }
 

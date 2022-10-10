@@ -13,9 +13,17 @@ const GameController = (function () {
       Ship([1, 2, 3, 4]),
       Ship([91, 92, 93, 94, 95]),
     ];
+    const shipsArr2 = [
+      Ship([62, 72]),
+      Ship([52, 53, 54]),
+      Ship([35, 45, 55]),
+      Ship([1, 2, 3, 4]),
+      Ship([91, 92, 93, 94, 95]),
+    ];
     const player1 = Player("player", shipsArr1);
-    const player2 = Player("cpu", shipsArr1);
+    const player2 = Player("cpu", shipsArr2);
     //generate dom
+    Dom.generateDom(player1, player2);
   }
 
   //todo this function is for dom tiles
