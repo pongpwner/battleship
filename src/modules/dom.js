@@ -39,12 +39,7 @@ const Dom = (function (player1, player2) {
               tile.classList.add(playerTile.status);
             }
           });
-          // for(let i=0; i< playerTiles.length; i++){
-          //   if(playerTiles[i].dataset.tileNumber==playerTile.index){
-          //     tile.classList.add(playerTile.status);
-          //     if()
-          //   }
-          // }
+
           //add game end check
           if (opponent.gameBoard.loss) {
             alert("opponent loses");
@@ -57,11 +52,20 @@ const Dom = (function (player1, player2) {
 
       opponentBoard.appendChild(temp);
     }
+
+    //load player tiles
     for (let i = 0; i < 100; i++) {
       let temp = document.createElement("button");
       //add receive attack method
       temp.classList.add("board-tile", "neutral", "player-tile");
       temp.dataset.tileNumber = i;
+      player.gameBoard.ships.forEach((ship) => {
+        ship.location.forEach((loca) => {
+          if (loca == i) {
+            temp.classList.add("player-ship");
+          }
+        });
+      });
       playerBoard.appendChild(temp);
     }
 
