@@ -2,6 +2,7 @@ import Ship from "./ship";
 
 //possibly take an array of ships
 let GameBoard = function (shipsArr) {
+  let loss = false;
   let board = [];
   for (let i = 0; i < 100; i++) {
     board.push(i);
@@ -13,7 +14,7 @@ let GameBoard = function (shipsArr) {
   let usedAttacks = [];
   function checkLoss() {
     if (this.ships.length === 0) {
-      return "all of your ships have sunk";
+      this.loss = true;
     }
   }
   function placeShip() {}
@@ -38,7 +39,8 @@ let GameBoard = function (shipsArr) {
         if (ship.sunk === true) {
           // push ship out of array
           this.ships = this.ships.filter(
-            (ship1) => ship1.length !== ship.length
+            //(ship1) => ship1.length !== ship.length
+            (ship1) => !ship1.sunk
           );
           this.checkLoss();
         }
@@ -50,6 +52,7 @@ let GameBoard = function (shipsArr) {
     }
   }
   return {
+    loss,
     board,
     ships,
     usedAttacks,

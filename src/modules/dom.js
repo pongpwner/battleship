@@ -26,23 +26,31 @@ const Dom = (function (player1, player2) {
           //call oponent attack
           let playerTileIndex = opponent.cpuAttack(player);
           //get tile from player used tiles
-          console.log(playerTileIndex);
+          //console.log(playerTileIndex);
           let playerTile = player.gameBoard.usedAttacks.find(
             (attack) => attack.index === playerTileIndex
           );
-          console.log(playerTile);
+
           //find player tile with queryselector
           let playerTiles = document.querySelectorAll(".player-tile");
-          //console.log(playerTiles);
+
           playerTiles.forEach((tile) => {
-            console.log(playerTile.index);
-            console.log(tile.dataset.tileNumber);
             if (tile.dataset.tileNumber == playerTile.index) {
-              console.log("hit");
               tile.classList.add(playerTile.status);
             }
           });
+          // for(let i=0; i< playerTiles.length; i++){
+          //   if(playerTiles[i].dataset.tileNumber==playerTile.index){
+          //     tile.classList.add(playerTile.status);
+          //     if()
+          //   }
+          // }
           //add game end check
+          if (opponent.gameBoard.loss) {
+            alert("opponent loses");
+          } else if (player.gameBoard.loss) {
+            alert("player loses");
+          }
         },
         { once: true }
       );
